@@ -1,29 +1,46 @@
 ---
 title: Microsoft Teams node documentation
-description: Learn how to use the Microsoft Teams node in n8n. Follow technical documentation to integrate Microsoft Teams node into your workflows.
-contentType: [integration, reference]
+description: >-
+  Learn how to use the Microsoft Teams node in n8n. Follow technical
+  documentation to integrate Microsoft Teams node into your workflows.
+contentType:
+  - integration
+  - reference
 priority: medium
+nodeTitle: Microsoft Teams node documentation
+originalFilePath: integrations/builtin/app-nodes/n8n-nodes-base.microsoftteams.md
+originalUrl: >-
+  https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.microsoftteams
+url: >-
+  https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.microsoftteams
+layout:
+  description:
+    visible: false
 ---
 
-# Microsoft Teams node
+# Microsoft Teams node <a href="#microsoft-teams-node" id="microsoft-teams-node"></a>
 
 Use the Microsoft Teams node to automate work in Microsoft Teams, and integrate Microsoft Teams with other applications. n8n has built-in support for a wide range of Microsoft Teams features, including creating and deleting, channels, messages, and tasks. 
 
 On this page, you'll find a list of operations the Microsoft Teams node supports and links to more resources.
 
-/// note | Credentials
-Refer to [Microsoft credentials](/integrations/builtin/credentials/microsoft.md) for guidance on setting up authentication.
-///
+{% hint style="info" %}
+**Credentials**
 
-/// tip | Government Cloud Support
+Refer to [Microsoft credentials](../credentials/microsoft.md) for guidance on setting up authentication. From version 2 of the node, this node also supports the [Microsoft Entra Service Principal credentials](../credentials/microsoftentraserviceprincipal.md) for app-only access with no signed-in user: select **Service Principal (App-Only)** in the **Authentication** dropdown.
+{% endhint %}
+
+{% hint style="info" %}
+**Government Cloud Support**
+
 If you're using a government cloud tenant (US Government, US Government DOD, or China), make sure to select the appropriate **Microsoft Graph API Base URL** in your Microsoft credentials configuration.
-///
+{% endhint %}
 
---8<-- "_snippets/integrations/builtin/app-nodes/ai-tools.md"
+{% include "https://app.gitbook.com/s/GixZThfitWP21x2gQFpD/~/reusable/6vuTxJwns2nA8U7V56ij/" %}
 
---8<-- "_snippets/integrations/builtin/app-nodes/hitl-tools.md"
+{% include "https://app.gitbook.com/s/GixZThfitWP21x2gQFpD/~/reusable/sYWM3IB0LEL4RkPx8ndF/" %}
 
-## Operations
+## Operations <a href="#operations" id="operations"></a>
 
 * Channel
     * Create
@@ -33,7 +50,10 @@ If you're using a government cloud tenant (US Government, US Government DOD, or 
     * Update
 * Channel Message
     * Create
+    * Get
     * Get Many
+    * Get Many Replies
+    * Reply
 * Chat Message
 	* Create
 	* Get
@@ -46,15 +66,23 @@ If you're using a government cloud tenant (US Government, US Government DOD, or 
     * Get Many
     * Update
 
---8<-- "_snippets/integrations/builtin/send-and-wait-operation.md"
+{% hint style="info" %}
+**Channel messages with Service Principal credentials**
 
-## Templates and examples
+The **Create** and **Reply** operations for channel messages are not available with the Microsoft Entra Service Principal credentials. App-only Microsoft Graph supports only migration import for channel messages. Use an OAuth2 credential to send channel messages.
 
-<!-- see https://www.notion.so/n8n/Pull-in-templates-for-the-integrations-pages-37c716837b804d30a33b47475f6e3780 -->
-[[ templatesWidget(page.title, 'microsoft-teams') ]]
+The read operations stay available with the Service Principal credentials: **Get**, **Get Many**, and **Get Many Replies**.
+{% endhint %}
 
-## Related resources
+{% include "https://app.gitbook.com/s/GixZThfitWP21x2gQFpD/~/reusable/c0Jp2CWNEFSR2IfIVdlL/" %}
+
+## Templates and examples <a href="#templates-and-examples" id="templates-and-examples"></a>
+
+
+[Browse Microsoft Teams node documentation integration templates](https://n8n.io/integrations/microsoft-teams) or [search all templates](https://n8n.io/workflows/)
+
+## Related resources <a href="#related-resources" id="related-resources"></a>
 
 Refer to [Microsoft Teams' API documentation](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0) for more information about the service.
 
---8<-- "_snippets/integrations/builtin/app-nodes/operation-not-supported.md"
+{% include "https://app.gitbook.com/s/GixZThfitWP21x2gQFpD/~/reusable/96ifDzfcUuwOyYrubZUt/" %}
